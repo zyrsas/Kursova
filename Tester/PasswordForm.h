@@ -171,6 +171,7 @@ private: System::Void enterBtn_Click(System::Object^  sender, System::EventArgs^
 				 //correct login or password, show EditForm
 				 EditTestForm^ secondForm = gcnew EditTestForm();
 				 secondForm->Show();
+				 Close();
 			 }
 			 else
 				//incorrect login or password, show MessageBox

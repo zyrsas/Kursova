@@ -102,7 +102,7 @@ namespace Tester {
 			this->chooseBox->Name = L"chooseBox";
 			this->chooseBox->Size = System::Drawing::Size(249, 30);
 			this->chooseBox->TabIndex = 2;
-			this->chooseBox->Text = L"Виберіть режим";
+			this->chooseBox->Text = L"Адміністратор";
 			// 
 			// exitBtn
 			// 
@@ -140,8 +140,16 @@ namespace Tester {
 	//event click Ok btn
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				 //Form administrator show for create or edit tests
-				 PasswordForm^ secondForm = gcnew PasswordForm();
-				 secondForm->Show();
+				 if (this->chooseBox->Text == "Адміністратор")
+				 {
+					 //show password form
+					PasswordForm^ passwordForm = gcnew PasswordForm();
+					passwordForm->Show();
+				 }
+				 else
+				 {
+					
+				 }
 			 }
 
 	//event click exit Button
