@@ -81,6 +81,7 @@
     <ClCompile Include="EditTestForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="PasswordForm.cpp" />
+    <ClCompile Include="WelcomeUserForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EditTestForm.h">
@@ -90,6 +91,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PasswordForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="WelcomeUserForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordForm.resx">
       <DependentUpon>PasswordForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeUserForm.resx">
+      <DependentUpon>WelcomeUserForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

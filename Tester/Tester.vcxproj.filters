@@ -24,6 +24,9 @@
     <ClCompile Include="PasswordForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WelcomeUserForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
@@ -35,5 +38,19 @@
     <ClInclude Include="PasswordForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WelcomeUserForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EditTestForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

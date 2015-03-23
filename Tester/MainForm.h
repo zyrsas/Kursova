@@ -1,6 +1,7 @@
 #pragma once
 #include "EditTestForm.h"
 #include "PasswordForm.h"
+#include "WelcomeUserForm.h"
 
 namespace Tester {
 
@@ -148,7 +149,8 @@ namespace Tester {
 				 }
 				 else
 				 {
-					
+					WelcomeUserForm^ welcomeUserForm = gcnew WelcomeUserForm();
+					welcomeUserForm->Show();
 				 }
 			 }
 

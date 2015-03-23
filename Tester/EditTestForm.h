@@ -72,18 +72,18 @@ namespace Tester {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(EditTestForm::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ïðîÏðîãðàìóToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ñòâîðèòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->â³äêðèòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->çáåðåãòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->ïðîÏðîãðàìóToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
@@ -109,6 +109,73 @@ namespace Tester {
 			this->panel1->Size = System::Drawing::Size(1039, 75);
 			this->panel1->TabIndex = 0;
 			// 
+			// button6
+			// 
+			this->button6->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button6.Image")));
+			this->button6->Location = System::Drawing::Point(315, 2);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(110, 69);
+			this->button6->TabIndex = 5;
+			this->button6->Text = L"Ðåçóëüòàòè";
+			this->button6->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button5.Image")));
+			this->button5->Location = System::Drawing::Point(535, 2);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(98, 69);
+			this->button5->TabIndex = 4;
+			this->button5->Text = L"Âèõ³ä";
+			this->button5->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button4.Image")));
+			this->button4->Location = System::Drawing::Point(431, 3);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(98, 69);
+			this->button4->TabIndex = 3;
+			this->button4->Text = L"Äîâ³äêà";
+			this->button4->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &EditTestForm::button4_Click);
+			// 
+			// button3
+			// 
+			this->button3->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button3.Image")));
+			this->button3->Location = System::Drawing::Point(211, 3);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(98, 69);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"Çáåðåãòè";
+			this->button3->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button2.Image")));
+			this->button2->Location = System::Drawing::Point(107, 3);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(98, 69);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Â³äêðèòè";
+			this->button2->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button1.Image")));
+			this->button1->Location = System::Drawing::Point(3, 3);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(98, 69);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Ñòâîðèòè";
+			this->button1->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->button1->UseVisualStyleBackColor = true;
+			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {this->ôàéëToolStripMenuItem, 
@@ -127,96 +194,29 @@ namespace Tester {
 			this->ôàéëToolStripMenuItem->Size = System::Drawing::Size(48, 20);
 			this->ôàéëToolStripMenuItem->Text = L"Ôàéë";
 			// 
-			// ïðîÏðîãðàìóToolStripMenuItem
-			// 
-			this->ïðîÏðîãðàìóToolStripMenuItem->Name = L"ïðîÏðîãðàìóToolStripMenuItem";
-			this->ïðîÏðîãðàìóToolStripMenuItem->Size = System::Drawing::Size(99, 20);
-			this->ïðîÏðîãðàìóToolStripMenuItem->Text = L"Ïðî ïðîãðàìó";
-			// 
 			// ñòâîðèòèToolStripMenuItem
 			// 
 			this->ñòâîðèòèToolStripMenuItem->Name = L"ñòâîðèòèToolStripMenuItem";
-			this->ñòâîðèòèToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ñòâîðèòèToolStripMenuItem->Size = System::Drawing::Size(126, 22);
 			this->ñòâîðèòèToolStripMenuItem->Text = L"Ñòâîðèòè";
 			// 
 			// â³äêðèòèToolStripMenuItem
 			// 
 			this->â³äêðèòèToolStripMenuItem->Name = L"â³äêðèòèToolStripMenuItem";
-			this->â³äêðèòèToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->â³äêðèòèToolStripMenuItem->Size = System::Drawing::Size(126, 22);
 			this->â³äêðèòèToolStripMenuItem->Text = L"Â³äêðèòè";
 			// 
 			// çáåðåãòèToolStripMenuItem
 			// 
 			this->çáåðåãòèToolStripMenuItem->Name = L"çáåðåãòèToolStripMenuItem";
-			this->çáåðåãòèToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->çáåðåãòèToolStripMenuItem->Size = System::Drawing::Size(126, 22);
 			this->çáåðåãòèToolStripMenuItem->Text = L"Çáåðåãòè";
 			// 
-			// button1
+			// ïðîÏðîãðàìóToolStripMenuItem
 			// 
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button1.Image")));
-			this->button1->Location = System::Drawing::Point(3, 3);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(98, 69);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Ñòâîðèòè";
-			this->button1->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button2.Image")));
-			this->button2->Location = System::Drawing::Point(107, 3);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(98, 69);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Â³äêðèòè";
-			this->button2->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button3.Image")));
-			this->button3->Location = System::Drawing::Point(211, 3);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(98, 69);
-			this->button3->TabIndex = 2;
-			this->button3->Text = L"Çáåðåãòè";
-			this->button3->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button3->UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			this->button4->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button4.Image")));
-			this->button4->Location = System::Drawing::Point(431, 3);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(98, 69);
-			this->button4->TabIndex = 3;
-			this->button4->Text = L"Äîâ³äêà";
-			this->button4->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &EditTestForm::button4_Click);
-			// 
-			// button5
-			// 
-			this->button5->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button5.Image")));
-			this->button5->Location = System::Drawing::Point(535, 2);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(98, 69);
-			this->button5->TabIndex = 4;
-			this->button5->Text = L"Âèõ³ä";
-			this->button5->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button5->UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			this->button6->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button6.Image")));
-			this->button6->Location = System::Drawing::Point(315, 2);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(110, 69);
-			this->button6->TabIndex = 5;
-			this->button6->Text = L"Ðåçóëüòàòè";
-			this->button6->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button6->UseVisualStyleBackColor = true;
+			this->ïðîÏðîãðàìóToolStripMenuItem->Name = L"ïðîÏðîãðàìóToolStripMenuItem";
+			this->ïðîÏðîãðàìóToolStripMenuItem->Size = System::Drawing::Size(99, 20);
+			this->ïðîÏðîãðàìóToolStripMenuItem->Text = L"Ïðî ïðîãðàìó";
 			// 
 			// groupBox1
 			// 
@@ -292,9 +292,11 @@ namespace Tester {
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"EditTestForm";
-			this->Text = L"EditTestForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Ðåæèì àäì³í³ñòðàòîðà";
 			this->panel1->ResumeLayout(false);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
