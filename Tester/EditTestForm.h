@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+using namespace std;
 
 namespace Tester {
 
@@ -15,6 +17,7 @@ namespace Tester {
 	public ref class EditTestForm : public System::Windows::Forms::Form
 	{
 	public:
+		int countQuestion;
 		EditTestForm(void)
 		{
 			InitializeComponent();
@@ -59,28 +62,41 @@ namespace Tester {
 	private: System::Windows::Forms::GroupBox^  groupBox3;
 	private: System::Windows::Forms::RichTextBox^  richTextBox1;
 	private: System::Windows::Forms::GroupBox^  groupBox4;
-	private: System::Windows::Forms::ListView^  listView1;
+
+
 	private: System::Windows::Forms::Panel^  panel2;
 	private: System::Windows::Forms::Button^  delBtn;
 
 	private: System::Windows::Forms::Button^  addBtn;
 	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::RichTextBox^  richTextBox2;
+	private: System::Windows::Forms::RichTextBox^  answerTextA;
+
+
 	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::RichTextBox^  richTextBox3;
+	private: System::Windows::Forms::RichTextBox^  answerTextB;
+
 	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::RichTextBox^  richTextBox5;
+	private: System::Windows::Forms::RichTextBox^  answerTextD;
+
 	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::RichTextBox^  richTextBox4;
+	private: System::Windows::Forms::RichTextBox^  answerTextC;
+
 	private: System::Windows::Forms::GroupBox^  groupBox5;
-	private: System::Windows::Forms::ComboBox^  countAnswer;
+	private: System::Windows::Forms::ComboBox^  countAnswerBox;
+
 	private: System::Windows::Forms::GroupBox^  groupBox6;
-	private: System::Windows::Forms::ComboBox^  comboBox1;
+	private: System::Windows::Forms::ComboBox^  timeBox;
+
 	private: System::Windows::Forms::GroupBox^  groupBox7;
-	private: System::Windows::Forms::ComboBox^  comboBox2;
+	private: System::Windows::Forms::ComboBox^  correctAnswerBox;
+
 	private: System::Windows::Forms::GroupBox^  groupBox8;
-	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^  author;
+
 	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
+	private: System::Windows::Forms::ListBox^  navigateList;
+	private: System::Windows::Forms::GroupBox^  groupBox9;
+	private: System::Windows::Forms::TextBox^  textBox1;
 
 
 
@@ -116,41 +132,44 @@ namespace Tester {
 			this->çáåðåãòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ïðîÏðîãðàìóToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->navigateList = (gcnew System::Windows::Forms::ListBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->delBtn = (gcnew System::Windows::Forms::Button());
 			this->addBtn = (gcnew System::Windows::Forms::Button());
-			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->richTextBox3 = (gcnew System::Windows::Forms::RichTextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->richTextBox4 = (gcnew System::Windows::Forms::RichTextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->richTextBox5 = (gcnew System::Windows::Forms::RichTextBox());
-			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->countAnswer = (gcnew System::Windows::Forms::ComboBox());
-			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->author = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
+			this->correctAnswerBox = (gcnew System::Windows::Forms::ComboBox());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
+			this->timeBox = (gcnew System::Windows::Forms::ComboBox());
+			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
+			this->countAnswerBox = (gcnew System::Windows::Forms::ComboBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->answerTextD = (gcnew System::Windows::Forms::RichTextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->answerTextC = (gcnew System::Windows::Forms::RichTextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->answerTextB = (gcnew System::Windows::Forms::RichTextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->answerTextA = (gcnew System::Windows::Forms::RichTextBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->groupBox4->SuspendLayout();
-			this->groupBox5->SuspendLayout();
-			this->groupBox6->SuspendLayout();
-			this->groupBox7->SuspendLayout();
 			this->groupBox8->SuspendLayout();
+			this->groupBox7->SuspendLayout();
+			this->groupBox6->SuspendLayout();
+			this->groupBox5->SuspendLayout();
+			this->groupBox9->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -280,8 +299,8 @@ namespace Tester {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->navigateList);
 			this->groupBox1->Controls->Add(this->panel2);
-			this->groupBox1->Controls->Add(this->listView1);
 			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->groupBox1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlText;
@@ -291,6 +310,19 @@ namespace Tester {
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Íàâ³ãàö³ÿ";
+			// 
+			// navigateList
+			// 
+			this->navigateList->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->navigateList->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->navigateList->FormattingEnabled = true;
+			this->navigateList->ItemHeight = 21;
+			this->navigateList->Items->AddRange(gcnew cli::array< System::Object^  >(1) {L"Ïèòàííÿ ¹1"});
+			this->navigateList->Location = System::Drawing::Point(3, 62);
+			this->navigateList->Name = L"navigateList";
+			this->navigateList->Size = System::Drawing::Size(194, 437);
+			this->navigateList->TabIndex = 2;
 			// 
 			// panel2
 			// 
@@ -312,6 +344,7 @@ namespace Tester {
 			this->delBtn->TabIndex = 1;
 			this->delBtn->Text = L"Âèäàëèòè";
 			this->delBtn->UseVisualStyleBackColor = true;
+			this->delBtn->Click += gcnew System::EventHandler(this, &EditTestForm::delBtn_Click);
 			// 
 			// addBtn
 			// 
@@ -323,15 +356,7 @@ namespace Tester {
 			this->addBtn->TabIndex = 0;
 			this->addBtn->Text = L"Äîáàâèòè";
 			this->addBtn->UseVisualStyleBackColor = true;
-			// 
-			// listView1
-			// 
-			this->listView1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->listView1->Location = System::Drawing::Point(3, 16);
-			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(194, 483);
-			this->listView1->TabIndex = 0;
-			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->addBtn->Click += gcnew System::EventHandler(this, &EditTestForm::addBtn_Click);
 			// 
 			// groupBox2
 			// 
@@ -375,18 +400,19 @@ namespace Tester {
 			// 
 			// groupBox4
 			// 
+			this->groupBox4->Controls->Add(this->groupBox9);
 			this->groupBox4->Controls->Add(this->groupBox8);
 			this->groupBox4->Controls->Add(this->groupBox7);
 			this->groupBox4->Controls->Add(this->groupBox6);
 			this->groupBox4->Controls->Add(this->groupBox5);
 			this->groupBox4->Controls->Add(this->label4);
-			this->groupBox4->Controls->Add(this->richTextBox5);
+			this->groupBox4->Controls->Add(this->answerTextD);
 			this->groupBox4->Controls->Add(this->label3);
-			this->groupBox4->Controls->Add(this->richTextBox4);
+			this->groupBox4->Controls->Add(this->answerTextC);
 			this->groupBox4->Controls->Add(this->label2);
-			this->groupBox4->Controls->Add(this->richTextBox3);
+			this->groupBox4->Controls->Add(this->answerTextB);
 			this->groupBox4->Controls->Add(this->label1);
-			this->groupBox4->Controls->Add(this->richTextBox2);
+			this->groupBox4->Controls->Add(this->answerTextA);
 			this->groupBox4->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->groupBox4->Location = System::Drawing::Point(200, 314);
 			this->groupBox4->Name = L"groupBox4";
@@ -395,68 +421,98 @@ namespace Tester {
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Â³äïîâ³ä³";
 			// 
-			// richTextBox2
+			// groupBox8
 			// 
-			this->richTextBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->richTextBox2->Location = System::Drawing::Point(48, 79);
-			this->richTextBox2->Name = L"richTextBox2";
-			this->richTextBox2->Size = System::Drawing::Size(579, 33);
-			this->richTextBox2->TabIndex = 0;
-			this->richTextBox2->Text = L"";
+			this->groupBox8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->groupBox8->Controls->Add(this->author);
+			this->groupBox8->Location = System::Drawing::Point(279, 235);
+			this->groupBox8->Name = L"groupBox8";
+			this->groupBox8->Size = System::Drawing::Size(347, 49);
+			this->groupBox8->TabIndex = 10;
+			this->groupBox8->TabStop = false;
+			this->groupBox8->Text = L"Àâòîð òåñòó";
 			// 
-			// label1
+			// author
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->author->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->author->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(9, 79);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(33, 29);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"A)";
+			this->author->Location = System::Drawing::Point(16, 15);
+			this->author->Name = L"author";
+			this->author->Size = System::Drawing::Size(325, 26);
+			this->author->TabIndex = 0;
 			// 
-			// label2
+			// groupBox7
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->groupBox7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->groupBox7->Controls->Add(this->correctAnswerBox);
+			this->groupBox7->Location = System::Drawing::Point(215, 20);
+			this->groupBox7->Name = L"groupBox7";
+			this->groupBox7->Size = System::Drawing::Size(196, 53);
+			this->groupBox7->TabIndex = 10;
+			this->groupBox7->TabStop = false;
+			this->groupBox7->Text = L"Ïðàâåëüíà â³äïîâ³äü";
+			// 
+			// correctAnswerBox
+			// 
+			this->correctAnswerBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->correctAnswerBox->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->label2->Location = System::Drawing::Point(8, 118);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(33, 29);
-			this->label2->TabIndex = 3;
-			this->label2->Text = L"B)";
+			this->correctAnswerBox->FormattingEnabled = true;
+			this->correctAnswerBox->ImeMode = System::Windows::Forms::ImeMode::On;
+			this->correctAnswerBox->Items->AddRange(gcnew cli::array< System::Object^  >(1) {L"A)"});
+			this->correctAnswerBox->Location = System::Drawing::Point(15, 19);
+			this->correctAnswerBox->Name = L"correctAnswerBox";
+			this->correctAnswerBox->Size = System::Drawing::Size(143, 25);
+			this->correctAnswerBox->TabIndex = 0;
 			// 
-			// richTextBox3
+			// groupBox6
 			// 
-			this->richTextBox3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->richTextBox3->Location = System::Drawing::Point(47, 118);
-			this->richTextBox3->Name = L"richTextBox3";
-			this->richTextBox3->Size = System::Drawing::Size(579, 33);
-			this->richTextBox3->TabIndex = 2;
-			this->richTextBox3->Text = L"";
+			this->groupBox6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->groupBox6->Controls->Add(this->timeBox);
+			this->groupBox6->Location = System::Drawing::Point(433, 20);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(195, 53);
+			this->groupBox6->TabIndex = 9;
+			this->groupBox6->TabStop = false;
+			this->groupBox6->Text = L"×àñ íà âèêîíàííÿ òåñòó (õâèëèí)";
 			// 
-			// label3
+			// timeBox
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->timeBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->timeBox->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->label3->Location = System::Drawing::Point(8, 157);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(33, 29);
-			this->label3->TabIndex = 5;
-			this->label3->Text = L"C)";
+			this->timeBox->FormattingEnabled = true;
+			this->timeBox->ImeMode = System::Windows::Forms::ImeMode::On;
+			this->timeBox->Items->AddRange(gcnew cli::array< System::Object^  >(7) {L"3", L"5", L"10", L"15", L"20", L"25", L"30"});
+			this->timeBox->Location = System::Drawing::Point(15, 19);
+			this->timeBox->Name = L"timeBox";
+			this->timeBox->Size = System::Drawing::Size(143, 25);
+			this->timeBox->TabIndex = 0;
 			// 
-			// richTextBox4
+			// groupBox5
 			// 
-			this->richTextBox4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->richTextBox4->Location = System::Drawing::Point(47, 157);
-			this->richTextBox4->Name = L"richTextBox4";
-			this->richTextBox4->Size = System::Drawing::Size(579, 33);
-			this->richTextBox4->TabIndex = 4;
-			this->richTextBox4->Text = L"";
+			this->groupBox5->Controls->Add(this->countAnswerBox);
+			this->groupBox5->Location = System::Drawing::Point(15, 20);
+			this->groupBox5->Name = L"groupBox5";
+			this->groupBox5->Size = System::Drawing::Size(181, 53);
+			this->groupBox5->TabIndex = 8;
+			this->groupBox5->TabStop = false;
+			this->groupBox5->Text = L"Ê³ëüê³ñòü â³äïîâ³äåé";
+			// 
+			// countAnswerBox
+			// 
+			this->countAnswerBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->countAnswerBox->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->countAnswerBox->FormattingEnabled = true;
+			this->countAnswerBox->ImeMode = System::Windows::Forms::ImeMode::On;
+			this->countAnswerBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"1", L"2", L"3", L"4"});
+			this->countAnswerBox->Location = System::Drawing::Point(16, 19);
+			this->countAnswerBox->Name = L"countAnswerBox";
+			this->countAnswerBox->Size = System::Drawing::Size(143, 25);
+			this->countAnswerBox->TabIndex = 0;
+			this->countAnswerBox->SelectedIndexChanged += gcnew System::EventHandler(this, &EditTestForm::countAnswerBox_SelectedIndexChanged);
 			// 
 			// label4
 			// 
@@ -469,111 +525,104 @@ namespace Tester {
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"D)";
 			// 
-			// richTextBox5
+			// answerTextD
 			// 
-			this->richTextBox5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
+			this->answerTextD->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->richTextBox5->Location = System::Drawing::Point(47, 196);
-			this->richTextBox5->Name = L"richTextBox5";
-			this->richTextBox5->Size = System::Drawing::Size(579, 33);
-			this->richTextBox5->TabIndex = 6;
-			this->richTextBox5->Text = L"";
+			this->answerTextD->Enabled = false;
+			this->answerTextD->Location = System::Drawing::Point(47, 196);
+			this->answerTextD->Name = L"answerTextD";
+			this->answerTextD->Size = System::Drawing::Size(579, 33);
+			this->answerTextD->TabIndex = 6;
+			this->answerTextD->Text = L"";
 			// 
-			// groupBox5
+			// label3
 			// 
-			this->groupBox5->Controls->Add(this->countAnswer);
-			this->groupBox5->Location = System::Drawing::Point(15, 20);
-			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(181, 53);
-			this->groupBox5->TabIndex = 8;
-			this->groupBox5->TabStop = false;
-			this->groupBox5->Text = L"Ê³ëüê³ñòü â³äïîâ³äåé";
-			// 
-			// countAnswer
-			// 
-			this->countAnswer->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->countAnswer->FormattingEnabled = true;
-			this->countAnswer->ImeMode = System::Windows::Forms::ImeMode::On;
-			this->countAnswer->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"1", L"2", L"3", L"4"});
-			this->countAnswer->Location = System::Drawing::Point(15, 19);
-			this->countAnswer->Name = L"countAnswer";
-			this->countAnswer->Size = System::Drawing::Size(143, 25);
-			this->countAnswer->TabIndex = 0;
-			this->countAnswer->Text = L"1";
+			this->label3->Location = System::Drawing::Point(8, 157);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(33, 29);
+			this->label3->TabIndex = 5;
+			this->label3->Text = L"C)";
 			// 
-			// groupBox6
+			// answerTextC
 			// 
-			this->groupBox6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->groupBox6->Controls->Add(this->comboBox1);
-			this->groupBox6->Location = System::Drawing::Point(433, 20);
-			this->groupBox6->Name = L"groupBox6";
-			this->groupBox6->Size = System::Drawing::Size(195, 53);
-			this->groupBox6->TabIndex = 9;
-			this->groupBox6->TabStop = false;
-			this->groupBox6->Text = L"×àñ íà âèêîíàííÿ òåñòó (õâèëèí)";
+			this->answerTextC->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->answerTextC->Enabled = false;
+			this->answerTextC->Location = System::Drawing::Point(47, 157);
+			this->answerTextC->Name = L"answerTextC";
+			this->answerTextC->Size = System::Drawing::Size(579, 33);
+			this->answerTextC->TabIndex = 4;
+			this->answerTextC->Text = L"";
 			// 
-			// comboBox1
+			// label2
 			// 
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->ImeMode = System::Windows::Forms::ImeMode::On;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(7) {L"3", L"5", L"10", L"15", L"20", L"25", L"30"});
-			this->comboBox1->Location = System::Drawing::Point(15, 19);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(143, 25);
-			this->comboBox1->TabIndex = 0;
-			this->comboBox1->Text = L"3";
+			this->label2->Location = System::Drawing::Point(8, 118);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(33, 29);
+			this->label2->TabIndex = 3;
+			this->label2->Text = L"B)";
 			// 
-			// groupBox7
+			// answerTextB
 			// 
-			this->groupBox7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->groupBox7->Controls->Add(this->comboBox2);
-			this->groupBox7->Location = System::Drawing::Point(215, 20);
-			this->groupBox7->Name = L"groupBox7";
-			this->groupBox7->Size = System::Drawing::Size(196, 53);
-			this->groupBox7->TabIndex = 10;
-			this->groupBox7->TabStop = false;
-			this->groupBox7->Text = L"Ïðàâåëüíà â³äïîâ³äü";
+			this->answerTextB->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->answerTextB->Enabled = false;
+			this->answerTextB->Location = System::Drawing::Point(47, 118);
+			this->answerTextB->Name = L"answerTextB";
+			this->answerTextB->Size = System::Drawing::Size(579, 33);
+			this->answerTextB->TabIndex = 2;
+			this->answerTextB->Text = L"";
 			// 
-			// comboBox2
+			// label1
 			// 
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->ImeMode = System::Windows::Forms::ImeMode::On;
-			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"A)", L"B)", L"C)", L"D)"});
-			this->comboBox2->Location = System::Drawing::Point(15, 19);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(143, 25);
-			this->comboBox2->TabIndex = 0;
-			this->comboBox2->Text = L"A)";
+			this->label1->Location = System::Drawing::Point(9, 79);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(33, 29);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"A)";
 			// 
-			// groupBox8
+			// answerTextA
 			// 
-			this->groupBox8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->groupBox8->Controls->Add(this->textBox1);
-			this->groupBox8->Location = System::Drawing::Point(279, 235);
-			this->groupBox8->Name = L"groupBox8";
-			this->groupBox8->Size = System::Drawing::Size(347, 49);
-			this->groupBox8->TabIndex = 10;
-			this->groupBox8->TabStop = false;
-			this->groupBox8->Text = L"Àâòîð òåñòó";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(204)));
-			this->textBox1->Location = System::Drawing::Point(16, 15);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(325, 26);
-			this->textBox1->TabIndex = 0;
+			this->answerTextA->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->answerTextA->Location = System::Drawing::Point(48, 79);
+			this->answerTextA->Name = L"answerTextA";
+			this->answerTextA->Size = System::Drawing::Size(579, 33);
+			this->answerTextA->TabIndex = 0;
+			this->answerTextA->Text = L"";
 			// 
 			// openFileDialog1
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
+			// groupBox9
+			// 
+			this->groupBox9->Controls->Add(this->textBox1);
+			this->groupBox9->Location = System::Drawing::Point(47, 236);
+			this->groupBox9->Name = L"groupBox9";
+			this->groupBox9->Size = System::Drawing::Size(225, 40);
+			this->groupBox9->TabIndex = 11;
+			this->groupBox9->TabStop = false;
+			this->groupBox9->Text = L"Ê³ëüê³ñòü áàë³â çà ïðàâåëüíó â³äïîâ³äü";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->textBox1->Location = System::Drawing::Point(6, 19);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(99, 26);
+			this->textBox1->TabIndex = 0;
 			// 
 			// EditTestForm
 			// 
@@ -591,6 +640,7 @@ namespace Tester {
 			this->Name = L"EditTestForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ðåæèì àäì³í³ñòðàòîðà";
+			this->Load += gcnew System::EventHandler(this, &EditTestForm::EditTestForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -599,11 +649,13 @@ namespace Tester {
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
-			this->groupBox5->ResumeLayout(false);
-			this->groupBox6->ResumeLayout(false);
-			this->groupBox7->ResumeLayout(false);
 			this->groupBox8->ResumeLayout(false);
 			this->groupBox8->PerformLayout();
+			this->groupBox7->ResumeLayout(false);
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox5->ResumeLayout(false);
+			this->groupBox9->ResumeLayout(false);
+			this->groupBox9->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -614,7 +666,73 @@ private: System::Void closeBtn_Click(System::Object^  sender, System::EventArgs^
 			 //exit: close form)
 			 Close();
 		 }
+
 private: System::Void ïðîÏðîãðàìóToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+
+		 //event create form
+private: System::Void EditTestForm_Load(System::Object^  sender, System::EventArgs^  e) {
+			this->countAnswerBox->SelectedIndex = 0;
+			this->correctAnswerBox->SelectedIndex = 0;
+			this->timeBox->SelectedIndex = 0;
+			countQuestion = 2;
+			
+		 }
+private: System::Void addBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+			 //add new question
+			 this->navigateList->Items->Add("Ïèòàííÿ ¹" + countQuestion++);
+		 }
+
+//change comboBox
+private: System::Void countAnswerBox_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			 switch (countAnswerBox->SelectedIndex)
+			 {
+				 case 0:
+					//correct answer Box
+					correctAnswerBox->Items->Clear();
+					correctAnswerBox->Items->Add("A)");
+					correctAnswerBox->SelectedIndex = 0;
+					
+					//enabled richText answer
+					answerTextB->Enabled = false;
+					answerTextC->Enabled = false;
+					answerTextD->Enabled = false;
+					break;
+				case 1:
+					correctAnswerBox->Items->Clear();
+					correctAnswerBox->Items->Add("A)");
+					correctAnswerBox->Items->Add("B)");
+					correctAnswerBox->SelectedIndex = 0;
+					
+					//enabled richText answer
+					answerTextB->Enabled = true;
+					answerTextC->Enabled = false;
+					answerTextD->Enabled = false;
+					break;
+				case 2:
+					correctAnswerBox->Items->Clear();
+					correctAnswerBox->Items->Add("A)");
+					correctAnswerBox->Items->Add("B)");
+					correctAnswerBox->Items->Add("C)");
+					correctAnswerBox->SelectedIndex = 0;
+					answerTextB->Enabled = true;
+					answerTextC->Enabled = true;
+					answerTextD->Enabled = false;
+					break;
+				case 3:
+					correctAnswerBox->Items->Clear();
+					correctAnswerBox->Items->Add("A)");
+					correctAnswerBox->Items->Add("B)");
+					correctAnswerBox->Items->Add("C)");
+					correctAnswerBox->Items->Add("D)");
+					correctAnswerBox->SelectedIndex = 0;
+					answerTextB->Enabled = true;
+					answerTextC->Enabled = true;
+					answerTextD->Enabled = true;
+			 }
+		 }
+private: System::Void delBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->navigateList->Items->Remove(this->navigateList->SelectedItems[0]);
 		 }
 };
 }
