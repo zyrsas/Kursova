@@ -1,6 +1,7 @@
   Tester.EditTestForm.resources - Embedded, ContainedInManifestFile, 
   Tester.MainForm.resources - Embedded, ContainedInManifestFile, 
   Tester.PasswordForm.resources - Embedded, ContainedInManifestFile, 
+  Tester.TestUserForm.resources - Embedded, ContainedInManifestFile, 
   Tester.WelcomeUserForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Tester, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
@@ -21,6 +22,9 @@ Class Tester.EditTestForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tester.PasswordForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Tester.TestUserForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tester.WelcomeUserForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

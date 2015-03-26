@@ -79,18 +79,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EditTestForm.cpp" />
+    <ClCompile Include="Encrypt.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="PasswordForm.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="TestUserForm.cpp" />
     <ClCompile Include="WelcomeUserForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EditTestForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Encrypt.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PasswordForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="TestUserForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="WelcomeUserForm.h">
@@ -106,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordForm.resx">
       <DependentUpon>PasswordForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestUserForm.resx">
+      <DependentUpon>TestUserForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeUserForm.resx">
       <DependentUpon>WelcomeUserForm.h</DependentUpon>

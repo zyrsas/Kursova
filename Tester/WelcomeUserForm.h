@@ -1,3 +1,4 @@
+#include "TestUserForm.h"
 #pragma once
 
 namespace Tester {
@@ -131,6 +132,7 @@ namespace Tester {
 			this->button1->Text = L"Старт";
 			this->button1->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &WelcomeUserForm::button1_Click);
 			// 
 			// WelcomeUserForm
 			// 
@@ -155,5 +157,10 @@ namespace Tester {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+				 TestUserForm^ testUserForm = gcnew TestUserForm();
+				 testUserForm->Show();
+				 Close();
+			 }
+};
 }
