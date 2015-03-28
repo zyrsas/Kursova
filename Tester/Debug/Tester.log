@@ -1,4 +1,4 @@
-﻿Build started 27.03.2015 0:08:50.
+﻿Build started 28.03.2015 13:12:48.
      1>Project "F:\Навчання\II курс\II семестр\ОЗП\Курсач\Проба\друга спроба\Tester\Tester\Tester.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib EditTestForm.cpp MainForm.cpp PasswordForm.cpp
@@ -11,6 +11,7 @@
          Debug\Encrypt.obj
          Debug\MainForm.obj
          Debug\PasswordForm.obj
+         Debug\Question.obj
          Debug\Student.obj
          Debug\TestUserForm.obj
          Debug\WelcomeUserForm.obj
@@ -20,4 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.74
+Time Elapsed 00:00:10.32

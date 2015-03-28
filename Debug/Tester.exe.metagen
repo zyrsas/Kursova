@@ -23,6 +23,8 @@ Class Tester.EditTestForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Int32 countQuestion : Public
+    Int32 prewIndexQuestion : Public
+    Question* quest : Public
 Class Tester.PasswordForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
