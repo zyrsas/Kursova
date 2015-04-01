@@ -1,4 +1,5 @@
   Tester.EditTestForm.resources - Embedded, ContainedInManifestFile, 
+  Tester.EditTestSettingForm.resources - Embedded, ContainedInManifestFile, 
   Tester.MainForm.resources - Embedded, ContainedInManifestFile, 
   Tester.PasswordForm.resources - Embedded, ContainedInManifestFile, 
   Tester.TestUserForm.resources - Embedded, ContainedInManifestFile, 
@@ -18,12 +19,16 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class Tester.EditTestSettingForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tester.EditTestForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Int32 countQuestion : Public
     Int32 prewIndexQuestion : Public
+    Test* test : Public
     Question* quest : Public
 Class Tester.PasswordForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

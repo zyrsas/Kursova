@@ -1,0 +1,40 @@
+#include "Question.h"
+
+
+Question::Question(void)
+{
+	
+}
+
+void Question::setOptions(string options, int index)
+{
+	switch (index)
+	{
+	case 1:
+		this->option_A = options;
+		break;
+	case 2:
+		this->option_B = options;
+		break;
+	case 3:
+		this->option_C = options;
+		break;
+	case 4:
+		this->option_D = options;
+	}
+}
+
+string Question::getOptions(int index)
+{
+	switch (index)
+	{
+	case 1:
+		return this->option_A;
+	case 2:
+		return this->option_B;
+	case 3:
+		return this->option_C;
+	case 4:
+		return this->option_D;
+	}
+}

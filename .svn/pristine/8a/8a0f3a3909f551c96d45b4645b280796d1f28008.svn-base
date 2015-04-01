@@ -1,0 +1,17 @@
+#include "Question.h"
+
+
+Question::Question(void)
+{
+	
+}
+
+void Question::setOptions(string options, int index)
+{
+	this->options[index] = options;
+}
+
+string Question::getOptions(int index)
+{
+	return this->options[index];
+}

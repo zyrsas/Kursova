@@ -1,0 +1,15 @@
+#include "Test.h"
+
+
+Test::Test(void)
+{
+	questions[0] = new Question();
+}
+
+void Test::writeInFile(Question quest[], int count)
+{
+		for (int i = 0; i < count; i++)
+		{
+			
+		}
+}

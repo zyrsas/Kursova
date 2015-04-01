@@ -1,0 +1,22 @@
+#pragma once
+#include <string>
+using namespace std;
+
+class Login
+{
+private:
+	string login;
+	string password;
+	string fileName;
+public:
+	Login(void);
+	void setLogin(string login) {this->login = login;};
+	string getLogin() {return this->login;};
+	void setPassword(string password) {this->password = password;};
+	string getPassword() {return this->password;};
+
+	void saveInFile();
+	void setInFile();
+	bool CheckLogin(string login, string password);
+};
+

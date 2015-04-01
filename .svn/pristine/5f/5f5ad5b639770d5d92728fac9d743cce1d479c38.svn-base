@@ -1,0 +1,21 @@
+#include "Test.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+Test::Test(void)
+{
+	this->fileName = "test.bd";
+}
+
+void Test::writeInFile(Question quest[], int count)
+{
+		ofstream myfile;
+		myfile.open (this->fileName);
+		for (int i = 0; i < count; i++)
+		{
+			myfile << quest[i].toString();
+		}
+		myfile.close();
+}

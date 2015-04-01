@@ -1,0 +1,26 @@
+#pragma once
+#include <string>
+#include "Question.h"
+using namespace std;
+
+class Test
+{
+private:
+	Question *questions[50];
+	int countQuestion;
+	int time;			//Time on the test
+	int ball;			//Count ball on the answer options
+	string author;
+	string fileName;
+public:
+	Test(void);
+	void setTime(int time) {this->time = time;};
+	void setBall(int ball) {this->ball = ball;};
+	void setAuthor(string author) {this->author = author;};
+	void writeInFile(Question quest[], int count);
+	
+	string getAuthor(){return this->author;};
+	int getTime() {return this->time;};
+	int getBall() {return this->ball;}; 
+};
+

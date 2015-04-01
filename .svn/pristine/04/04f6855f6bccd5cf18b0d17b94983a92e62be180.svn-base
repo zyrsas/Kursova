@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Class">
+      <UniqueIdentifier>{7209d48b-873f-481c-a6a8-a8ff6598ef6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Student">
+      <UniqueIdentifier>{48748c65-c017-4e23-8276-564b5aed8b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Encrypt">
+      <UniqueIdentifier>{04bebd62-de15-4e8a-86d1-2902c802bf51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\Question">
+      <UniqueIdentifier>{ed17bd6d-6f61-414f-9ca2-cc2c94b83f46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditTestForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PasswordForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WelcomeUserForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestUserForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>Class\Student</Filter>
+    </ClCompile>
+    <ClCompile Include="Encrypt.cpp">
+      <Filter>Class\Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="Question.cpp">
+      <Filter>Class\Question</Filter>
+    </ClCompile>
+    <ClCompile Include="EditTestSettingForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditTestForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WelcomeUserForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestUserForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Class\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="Encrypt.h">
+      <Filter>Class\Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="Question.h">
+      <Filter>Class\Question</Filter>
+    </ClInclude>
+    <ClInclude Include="EditTestSettingForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EditTestForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeUserForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestUserForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
