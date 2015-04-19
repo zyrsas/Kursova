@@ -1,0 +1,837 @@
+#pragma once
+#include "Test.h"
+#include "Question.h"
+#include <string>
+#include "Student.h"
+#include "WelcomeUserForm.h"
+using namespace std;
+
+
+namespace Tester {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Summary for TestUserForm
+	/// </summary>
+	public ref class TestUserForm : public System::Windows::Forms::Form
+	{
+	public:
+		Test *test;
+		Question *quest;
+		Student *student;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
+	private: System::Windows::Forms::RadioButton^  answerARBtn;
+	private: System::Windows::Forms::RadioButton^  answerDRBtn;
+
+
+	private: System::Windows::Forms::RadioButton^  answerCRBtn;
+
+	private: System::Windows::Forms::RadioButton^  answerBRBtn;
+	private: System::Windows::Forms::Timer^  timeTest;
+	private: System::Windows::Forms::Label^  timeLbl;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  nameTestLbl;
+
+
+
+
+	public: 
+		int currentQustion;
+		TestUserForm(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~TestUserForm()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::MenuStrip^  menuStrip1;
+	protected: 
+	private: System::Windows::Forms::ToolStripMenuItem^  Ù‡ÈÎToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  ‚≥‰ÍËÚËToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem3;
+	private: System::Windows::Forms::ToolStripMenuItem^  ‚Ëı≥‰ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem1;
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Button^  stopTestBtn;
+
+	private: System::Windows::Forms::Button^  openFileBtn;
+	private: System::Windows::Forms::Button^  startTestBtn;
+
+
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::RichTextBox^  questionText;
+
+
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::RichTextBox^  answerTextA;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::RichTextBox^  answerTextD;
+	private: System::Windows::Forms::RichTextBox^  answerTextC;
+	private: System::Windows::Forms::RichTextBox^  answerTextB;
+	private: System::Windows::Forms::Button^  nextQuestionBtn;
+
+	private: System::Windows::Forms::Label^  ballAnswerLbl;
+	private: System::Windows::Forms::Label^  authorLbl;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::Label^  currentAnswerLbl;
+
+	private: System::Windows::Forms::Label^  countQestionLbl;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
+	private: System::ComponentModel::IContainer^  components;
+
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TestUserForm::typeid));
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->Ù‡ÈÎToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->‚≥‰ÍËÚËToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripMenuItem3 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->‚Ëı≥‰ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->startTestBtn = (gcnew System::Windows::Forms::Button());
+			this->stopTestBtn = (gcnew System::Windows::Forms::Button());
+			this->openFileBtn = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->nameTestLbl = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->timeLbl = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->ballAnswerLbl = (gcnew System::Windows::Forms::Label());
+			this->authorLbl = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->currentAnswerLbl = (gcnew System::Windows::Forms::Label());
+			this->countQestionLbl = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->questionText = (gcnew System::Windows::Forms::RichTextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->answerTextA = (gcnew System::Windows::Forms::RichTextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->answerTextD = (gcnew System::Windows::Forms::RichTextBox());
+			this->answerTextC = (gcnew System::Windows::Forms::RichTextBox());
+			this->answerTextB = (gcnew System::Windows::Forms::RichTextBox());
+			this->nextQuestionBtn = (gcnew System::Windows::Forms::Button());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->answerDRBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->answerCRBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->answerBRBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->answerARBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->timeTest = (gcnew System::Windows::Forms::Timer(this->components));
+			this->menuStrip1->SuspendLayout();
+			this->panel1->SuspendLayout();
+			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
+			this->SuspendLayout();
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {this->Ù‡ÈÎToolStripMenuItem, 
+				this->toolStripMenuItem1});
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(812, 24);
+			this->menuStrip1->TabIndex = 0;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// Ù‡ÈÎToolStripMenuItem
+			// 
+			this->Ù‡ÈÎToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {this->‚≥‰ÍËÚËToolStripMenuItem, 
+				this->toolStripMenuItem3, this->‚Ëı≥‰ToolStripMenuItem});
+			this->Ù‡ÈÎToolStripMenuItem->Name = L"Ù‡ÈÎToolStripMenuItem";
+			this->Ù‡ÈÎToolStripMenuItem->Size = System::Drawing::Size(48, 20);
+			this->Ù‡ÈÎToolStripMenuItem->Text = L"‘‡ÈÎ";
+			// 
+			// ‚≥‰ÍËÚËToolStripMenuItem
+			// 
+			this->‚≥‰ÍËÚËToolStripMenuItem->Name = L"‚≥‰ÍËÚËToolStripMenuItem";
+			this->‚≥‰ÍËÚËToolStripMenuItem->Size = System::Drawing::Size(144, 22);
+			this->‚≥‰ÍËÚËToolStripMenuItem->Text = L"¬≥‰ÍËÚË";
+			// 
+			// toolStripMenuItem3
+			// 
+			this->toolStripMenuItem3->Name = L"toolStripMenuItem3";
+			this->toolStripMenuItem3->Size = System::Drawing::Size(144, 22);
+			this->toolStripMenuItem3->Text = L"______________";
+			// 
+			// ‚Ëı≥‰ToolStripMenuItem
+			// 
+			this->‚Ëı≥‰ToolStripMenuItem->Name = L"‚Ëı≥‰ToolStripMenuItem";
+			this->‚Ëı≥‰ToolStripMenuItem->Size = System::Drawing::Size(144, 22);
+			this->‚Ëı≥‰ToolStripMenuItem->Text = L"¬Ëı≥‰";
+			// 
+			// toolStripMenuItem1
+			// 
+			this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
+			this->toolStripMenuItem1->Size = System::Drawing::Size(24, 20);
+			this->toolStripMenuItem1->Text = L"\?";
+			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->startTestBtn);
+			this->panel1->Controls->Add(this->stopTestBtn);
+			this->panel1->Controls->Add(this->openFileBtn);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(0, 24);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(812, 70);
+			this->panel1->TabIndex = 1;
+			// 
+			// startTestBtn
+			// 
+			this->startTestBtn->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"startTestBtn.Image")));
+			this->startTestBtn->Location = System::Drawing::Point(370, 13);
+			this->startTestBtn->Name = L"startTestBtn";
+			this->startTestBtn->Size = System::Drawing::Size(206, 42);
+			this->startTestBtn->TabIndex = 2;
+			this->startTestBtn->Text = L"–ÓÁÔÓ˜‡ÚË ÚÂÒÚ";
+			this->startTestBtn->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->startTestBtn->UseVisualStyleBackColor = true;
+			// 
+			// stopTestBtn
+			// 
+			this->stopTestBtn->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"stopTestBtn.Image")));
+			this->stopTestBtn->Location = System::Drawing::Point(596, 13);
+			this->stopTestBtn->Name = L"stopTestBtn";
+			this->stopTestBtn->Size = System::Drawing::Size(204, 42);
+			this->stopTestBtn->TabIndex = 1;
+			this->stopTestBtn->Text = L"«‡‚Â¯ËÚË ÚÂÒÚ";
+			this->stopTestBtn->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->stopTestBtn->UseVisualStyleBackColor = true;
+			// 
+			// openFileBtn
+			// 
+			this->openFileBtn->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"openFileBtn.Image")));
+			this->openFileBtn->Location = System::Drawing::Point(22, 13);
+			this->openFileBtn->Name = L"openFileBtn";
+			this->openFileBtn->Size = System::Drawing::Size(212, 42);
+			this->openFileBtn->TabIndex = 0;
+			this->openFileBtn->Text = L"¬≥‰ÍËÚË ÚÂÒÚ";
+			this->openFileBtn->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->openFileBtn->UseVisualStyleBackColor = true;
+			this->openFileBtn->Click += gcnew System::EventHandler(this, &TestUserForm::openFileBtn_Click);
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->nameTestLbl);
+			this->groupBox1->Controls->Add(this->label10);
+			this->groupBox1->Controls->Add(this->timeLbl);
+			this->groupBox1->Controls->Add(this->label7);
+			this->groupBox1->Controls->Add(this->ballAnswerLbl);
+			this->groupBox1->Controls->Add(this->authorLbl);
+			this->groupBox1->Controls->Add(this->label9);
+			this->groupBox1->Controls->Add(this->label8);
+			this->groupBox1->Controls->Add(this->currentAnswerLbl);
+			this->groupBox1->Controls->Add(this->countQestionLbl);
+			this->groupBox1->Controls->Add(this->label6);
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Right;
+			this->groupBox1->Location = System::Drawing::Point(596, 94);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(216, 426);
+			this->groupBox1->TabIndex = 2;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"≤ÌÙÓÏ‡ˆ≥ˇ";
+			// 
+			// nameTestLbl
+			// 
+			this->nameTestLbl->AutoSize = true;
+			this->nameTestLbl->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->nameTestLbl->Location = System::Drawing::Point(55, 45);
+			this->nameTestLbl->Name = L"nameTestLbl";
+			this->nameTestLbl->Size = System::Drawing::Size(45, 23);
+			this->nameTestLbl->TabIndex = 21;
+			this->nameTestLbl->Text = L"“ÂÒÚ";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label10->Location = System::Drawing::Point(6, 51);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(43, 15);
+			this->label10->TabIndex = 20;
+			this->label10->Text = L"Õ‡Á‚‡:";
+			// 
+			// timeLbl
+			// 
+			this->timeLbl->AutoSize = true;
+			this->timeLbl->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->timeLbl->ForeColor = System::Drawing::Color::Red;
+			this->timeLbl->Location = System::Drawing::Point(122, 241);
+			this->timeLbl->Name = L"timeLbl";
+			this->timeLbl->Size = System::Drawing::Size(22, 26);
+			this->timeLbl->TabIndex = 19;
+			this->timeLbl->Text = L"0";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label7->Location = System::Drawing::Point(6, 249);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(106, 15);
+			this->label7->TabIndex = 18;
+			this->label7->Text = L"«‡ÎË¯ËÎÓÒ¸ ˜‡ÒÛ:";
+			// 
+			// ballAnswerLbl
+			// 
+			this->ballAnswerLbl->AutoSize = true;
+			this->ballAnswerLbl->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->ballAnswerLbl->Location = System::Drawing::Point(154, 153);
+			this->ballAnswerLbl->Name = L"ballAnswerLbl";
+			this->ballAnswerLbl->Size = System::Drawing::Size(22, 26);
+			this->ballAnswerLbl->TabIndex = 17;
+			this->ballAnswerLbl->Text = L"1";
+			// 
+			// authorLbl
+			// 
+			this->authorLbl->AutoSize = true;
+			this->authorLbl->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->authorLbl->Location = System::Drawing::Point(55, 187);
+			this->authorLbl->Name = L"authorLbl";
+			this->authorLbl->Size = System::Drawing::Size(55, 23);
+			this->authorLbl->TabIndex = 16;
+			this->authorLbl->Text = L"¿‚ÚÓ";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label9->Location = System::Drawing::Point(6, 195);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(43, 15);
+			this->label9->TabIndex = 15;
+			this->label9->Text = L"¿‚ÚÓ:";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label8->Location = System::Drawing::Point(6, 161);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(138, 15);
+			this->label8->TabIndex = 14;
+			this->label8->Text = L" -Ú¸ ·‡Î≥‚ Á‡ ‚≥‰ÔÓ‚≥‰¸:";
+			// 
+			// currentAnswerLbl
+			// 
+			this->currentAnswerLbl->AutoSize = true;
+			this->currentAnswerLbl->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->currentAnswerLbl->Location = System::Drawing::Point(154, 108);
+			this->currentAnswerLbl->Name = L"currentAnswerLbl";
+			this->currentAnswerLbl->Size = System::Drawing::Size(22, 26);
+			this->currentAnswerLbl->TabIndex = 13;
+			this->currentAnswerLbl->Text = L"1";
+			// 
+			// countQestionLbl
+			// 
+			this->countQestionLbl->AutoSize = true;
+			this->countQestionLbl->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->countQestionLbl->Location = System::Drawing::Point(154, 77);
+			this->countQestionLbl->Name = L"countQestionLbl";
+			this->countQestionLbl->Size = System::Drawing::Size(22, 26);
+			this->countQestionLbl->TabIndex = 12;
+			this->countQestionLbl->Text = L"1";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label6->Location = System::Drawing::Point(6, 119);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(111, 15);
+			this->label6->TabIndex = 11;
+			this->label6->Text = L"œÓÚÓ˜ÌÂ ÔËÚ‡ÌÌˇ: ";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label1->Location = System::Drawing::Point(6, 88);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(113, 15);
+			this->label1->TabIndex = 10;
+			this->label1->Text = L" ≥Î¸Í≥ÒÚ¸ ÔËÚ‡Ì¸: ";
+			// 
+			// questionText
+			// 
+			this->questionText->Dock = System::Windows::Forms::DockStyle::Top;
+			this->questionText->Location = System::Drawing::Point(0, 94);
+			this->questionText->Name = L"questionText";
+			this->questionText->Size = System::Drawing::Size(596, 148);
+			this->questionText->TabIndex = 3;
+			this->questionText->Text = L"";
+			// 
+			// label2
+			// 
+			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label2->Location = System::Drawing::Point(6, 278);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(33, 29);
+			this->label2->TabIndex = 5;
+			this->label2->Text = L"A)";
+			// 
+			// answerTextA
+			// 
+			this->answerTextA->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->answerTextA->Location = System::Drawing::Point(67, 277);
+			this->answerTextA->Name = L"answerTextA";
+			this->answerTextA->Size = System::Drawing::Size(526, 33);
+			this->answerTextA->TabIndex = 6;
+			this->answerTextA->Text = L"";
+			// 
+			// label4
+			// 
+			this->label4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label4->Location = System::Drawing::Point(6, 399);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(34, 29);
+			this->label4->TabIndex = 10;
+			this->label4->Text = L"D)";
+			// 
+			// label3
+			// 
+			this->label3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label3->Location = System::Drawing::Point(6, 360);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(33, 29);
+			this->label3->TabIndex = 9;
+			this->label3->Text = L"C)";
+			// 
+			// label5
+			// 
+			this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Mistral", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->label5->Location = System::Drawing::Point(6, 321);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(33, 29);
+			this->label5->TabIndex = 8;
+			this->label5->Text = L"B)";
+			// 
+			// answerTextD
+			// 
+			this->answerTextD->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->answerTextD->Enabled = false;
+			this->answerTextD->Location = System::Drawing::Point(67, 394);
+			this->answerTextD->Name = L"answerTextD";
+			this->answerTextD->Size = System::Drawing::Size(526, 33);
+			this->answerTextD->TabIndex = 13;
+			this->answerTextD->Text = L"";
+			// 
+			// answerTextC
+			// 
+			this->answerTextC->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->answerTextC->Enabled = false;
+			this->answerTextC->Location = System::Drawing::Point(67, 355);
+			this->answerTextC->Name = L"answerTextC";
+			this->answerTextC->Size = System::Drawing::Size(526, 33);
+			this->answerTextC->TabIndex = 12;
+			this->answerTextC->Text = L"";
+			// 
+			// answerTextB
+			// 
+			this->answerTextB->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->answerTextB->Enabled = false;
+			this->answerTextB->Location = System::Drawing::Point(67, 316);
+			this->answerTextB->Name = L"answerTextB";
+			this->answerTextB->Size = System::Drawing::Size(526, 33);
+			this->answerTextB->TabIndex = 11;
+			this->answerTextB->Text = L"";
+			// 
+			// nextQuestionBtn
+			// 
+			this->nextQuestionBtn->Enabled = false;
+			this->nextQuestionBtn->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->nextQuestionBtn->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"nextQuestionBtn.Image")));
+			this->nextQuestionBtn->Location = System::Drawing::Point(43, 448);
+			this->nextQuestionBtn->Name = L"nextQuestionBtn";
+			this->nextQuestionBtn->Size = System::Drawing::Size(539, 42);
+			this->nextQuestionBtn->TabIndex = 14;
+			this->nextQuestionBtn->Text = L"Õ‡ÒÚÛÔÌÂ Á‡ÔËÚ‡ÌÌˇ";
+			this->nextQuestionBtn->TextImageRelation = System::Windows::Forms::TextImageRelation::TextBeforeImage;
+			this->nextQuestionBtn->UseVisualStyleBackColor = true;
+			this->nextQuestionBtn->Click += gcnew System::EventHandler(this, &TestUserForm::nextQuestionBtn_Click);
+			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->groupBox2->Controls->Add(this->answerDRBtn);
+			this->groupBox2->Controls->Add(this->answerCRBtn);
+			this->groupBox2->Controls->Add(this->answerBRBtn);
+			this->groupBox2->Controls->Add(this->answerARBtn);
+			this->groupBox2->Location = System::Drawing::Point(37, 269);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(24, 162);
+			this->groupBox2->TabIndex = 18;
+			this->groupBox2->TabStop = false;
+			// 
+			// answerDRBtn
+			// 
+			this->answerDRBtn->AutoSize = true;
+			this->answerDRBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->answerDRBtn->Location = System::Drawing::Point(4, 137);
+			this->answerDRBtn->Name = L"answerDRBtn";
+			this->answerDRBtn->Size = System::Drawing::Size(14, 13);
+			this->answerDRBtn->TabIndex = 3;
+			this->answerDRBtn->TabStop = true;
+			this->answerDRBtn->UseVisualStyleBackColor = true;
+			// 
+			// answerCRBtn
+			// 
+			this->answerCRBtn->AutoSize = true;
+			this->answerCRBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->answerCRBtn->Location = System::Drawing::Point(4, 98);
+			this->answerCRBtn->Name = L"answerCRBtn";
+			this->answerCRBtn->Size = System::Drawing::Size(14, 13);
+			this->answerCRBtn->TabIndex = 2;
+			this->answerCRBtn->TabStop = true;
+			this->answerCRBtn->UseVisualStyleBackColor = true;
+			// 
+			// answerBRBtn
+			// 
+			this->answerBRBtn->AutoSize = true;
+			this->answerBRBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->answerBRBtn->Location = System::Drawing::Point(4, 59);
+			this->answerBRBtn->Name = L"answerBRBtn";
+			this->answerBRBtn->Size = System::Drawing::Size(14, 13);
+			this->answerBRBtn->TabIndex = 1;
+			this->answerBRBtn->TabStop = true;
+			this->answerBRBtn->UseVisualStyleBackColor = true;
+			// 
+			// answerARBtn
+			// 
+			this->answerARBtn->AutoSize = true;
+			this->answerARBtn->Checked = true;
+			this->answerARBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->answerARBtn->Location = System::Drawing::Point(6, 20);
+			this->answerARBtn->Name = L"answerARBtn";
+			this->answerARBtn->Size = System::Drawing::Size(14, 13);
+			this->answerARBtn->TabIndex = 0;
+			this->answerARBtn->TabStop = true;
+			this->answerARBtn->UseVisualStyleBackColor = true;
+			// 
+			// timeTest
+			// 
+			this->timeTest->Interval = 1000;
+			this->timeTest->Tick += gcnew System::EventHandler(this, &TestUserForm::timeTest_Tick);
+			// 
+			// TestUserForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(812, 520);
+			this->Controls->Add(this->groupBox2);
+			this->Controls->Add(this->nextQuestionBtn);
+			this->Controls->Add(this->answerTextD);
+			this->Controls->Add(this->answerTextC);
+			this->Controls->Add(this->answerTextB);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->answerTextA);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->questionText);
+			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->menuStrip1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
+			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
+			this->Name = L"TestUserForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"TestUserForm";
+			this->Load += gcnew System::EventHandler(this, &TestUserForm::TestUserForm_Load);
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+
+		
+String^ stringToString(string str)
+{
+	String^ str2 = gcnew String(str.c_str());
+	return str2;
+}
+
+String^ intToString(int numb)
+{
+	string str = to_string(numb);
+	String^ str2 = gcnew String(str.c_str());
+	return str2;
+}
+
+void MarshalString (String ^ s, string& os )
+{
+	//convert String to string
+	using namespace Runtime::InteropServices;
+	const char* chars = (const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+	os = chars;
+	Marshal::FreeHGlobal(IntPtr((void*)chars));
+}
+
+void clearFields()
+{
+	this->questionText->Clear();
+	this->answerTextA->Clear();
+	this->answerTextB->Clear();
+	this->answerTextC->Clear();
+	this->answerTextD->Clear();
+}
+
+void setAnswerTextFields(int index)
+{
+	switch (quest[index].getCountAnswer() - 1)
+		{
+			case 0:
+				//enabled richText answers
+				answerTextB->Enabled = false;
+				answerTextC->Enabled = false;
+				answerTextD->Enabled = false;
+				
+				answerBRBtn->Enabled = false;
+				answerCRBtn->Enabled = false;
+				answerDRBtn->Enabled = false;
+				break;
+			case 1:
+				//enabled richText answer
+				answerTextB->Enabled = true;
+				answerTextC->Enabled = false;
+				answerTextD->Enabled = false;
+				
+				answerBRBtn->Enabled = true;
+				answerCRBtn->Enabled = false;
+				answerDRBtn->Enabled = false;
+				break;
+			case 2:
+				//enabled richText answer
+				answerTextB->Enabled = true;
+				answerTextC->Enabled = true;
+				answerTextD->Enabled = false;
+				
+				answerBRBtn->Enabled = true;
+				answerCRBtn->Enabled = true;
+				answerDRBtn->Enabled = false;
+				break;
+			case 3:
+				//enabled richText answer
+				answerTextB->Enabled = true;
+				answerTextC->Enabled = true;
+				answerTextD->Enabled = true;
+
+				answerBRBtn->Enabled = true;
+				answerCRBtn->Enabled = true;
+				answerDRBtn->Enabled = true;
+		 }
+	string tmpStr;
+	tmpStr = quest[index].getQuestion();
+	this->questionText->Text = stringToString(tmpStr);
+	//==Set options A
+	tmpStr = quest[index].getOptions(0);
+	this->answerTextA->Text = stringToString(tmpStr);
+	//==set Options B
+	tmpStr = quest[index].getOptions(1);
+	this->answerTextB->Text = stringToString(tmpStr);
+	//===setOptions C
+	tmpStr = quest[index].getOptions(2);
+	this->answerTextC->Text = stringToString(tmpStr);
+	//====setOptions D
+	tmpStr = quest[index].getOptions(3);
+	this->answerTextD->Text = stringToString(tmpStr);
+}
+
+private: System::Void openFileBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->openFileDialog1->Filter = "BD Files|*.bd|All Files|*.*";
+    if( this->openFileDialog1->ShowDialog() != System::Windows::Forms::DialogResult::OK )
+	{
+		return;
+    }
+	
+	string tmpStr;
+	MarshalString(this->openFileDialog1->FileName, tmpStr);
+	clearFields();
+	
+	currentQustion = 0;
+	test->setCountQuestion(quest->setWithFile(quest,  tmpStr));
+	
+	//set with file
+	test->setWithFile(tmpStr);
+	//set label ball
+	this->ballAnswerLbl->Text = intToString(test->getBall());
+	//set label author
+	this->authorLbl->Text = stringToString(test->getAuthor());
+	//set label nametest
+	this->nameTestLbl->Text = stringToString(test->getNameTest());
+
+	setAnswerTextFields(currentQustion);
+
+	this->timeTest->Enabled = true;
+	this->countQestionLbl->Text = intToString(test->getCountQuestion());
+	this->nextQuestionBtn->Enabled = true;
+}
+
+private: System::Void TestUserForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	test = new Test();
+//	test->setTime(900);
+	quest = new Question[50];
+	
+	//Show Welcome form for authorization
+	WelcomeUserForm^ welcomeForm = gcnew WelcomeUserForm();
+	welcomeForm->ShowDialog();
+	
+	//click cancel button
+	if (welcomeForm->cancel)
+		Close();
+
+	//create new student
+	string tmpName, tmpGroup;
+	MarshalString(welcomeForm->nameStudentText->Text, tmpName);
+	MarshalString(welcomeForm->groupText->Text, tmpGroup);
+	student = new Student(tmpName, tmpGroup);
+}
+
+int getIndexChecked()
+{
+	if (this->answerARBtn->Checked)
+		return 1;
+	if (this->answerBRBtn->Checked)
+		return 2;
+	if (this->answerCRBtn->Checked)
+		return 3;
+	return 4;
+}
+
+private: System::Void nextQuestionBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+	
+	if(getIndexChecked() == quest[currentQustion].getRightAnswer())
+	{
+		student->rightAnswer(test->getBall());
+		MessageBox::Show("Right!!");
+	}
+	
+	currentQustion++;
+	if (currentQustion < test->getCountQuestion())
+	{
+		clearFields();
+		setAnswerTextFields(currentQustion);
+		this->currentAnswerLbl->Text = intToString(currentQustion + 1);
+	}
+	else
+	{
+		//end test
+		timeTest->Enabled = true;
+		student->saveRezult();
+		MessageBox::Show("¬≥Ú‡∫ÏÓ! ¬Ë ÒÍÎ‡ÎË ÚÂÒÚ! ¬‡¯ ÂÁÛÎ¸Ú‡Ú Á·ÂÂÊÂÌËÈ! ƒˇÍÛ∫ÏÓ!");
+		Close();
+	}
+	this->answerARBtn->Checked = true;
+
+}
+private: System::Void timeTest_Tick(System::Object^  sender, System::EventArgs^  e) {
+	test->setTime(test->getTime() - 1);
+	timeLbl->Text =  intToString(test->getTime());
+}
+
+
+};
+}

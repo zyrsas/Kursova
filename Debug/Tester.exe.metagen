@@ -1,7 +1,9 @@
   Tester.EditTestForm.resources - Embedded, ContainedInManifestFile, 
   Tester.EditTestSettingForm.resources - Embedded, ContainedInManifestFile, 
+  Tester.HelpTestForm.resources - Embedded, ContainedInManifestFile, 
   Tester.MainForm.resources - Embedded, ContainedInManifestFile, 
   Tester.PasswordForm.resources - Embedded, ContainedInManifestFile, 
+  Tester.RezultViewForm.resources - Embedded, ContainedInManifestFile, 
   Tester.TestUserForm.resources - Embedded, ContainedInManifestFile, 
   Tester.WelcomeUserForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -24,6 +26,17 @@ Class Tester.EditTestSettingForm: AutoLayout, AnsiClass, Class, Public, BeforeFi
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Login* login : Public
+    Boolean clickApply : Public
+    System.Windows.Forms.TextBox ballTestText : Public
+    System.Windows.Forms.TextBox authorTestText : Public
+    System.Windows.Forms.ComboBox timeBox : Public
+    System.Windows.Forms.TextBox nameTestText : Public
+Class Tester.RezultViewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Tester.HelpTestForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tester.EditTestForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

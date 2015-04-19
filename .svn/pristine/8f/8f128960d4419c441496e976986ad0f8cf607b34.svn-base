@@ -1,0 +1,56 @@
+#include "Encrypt.h"
+#include <iostream>
+#include <stdio.h>
+#include <fstream>
+#include <string>
+#include <windows.system.h>
+using namespace std;
+
+Encrypt::Encrypt(void)
+{
+	key = "monkey";
+}
+
+Encrypt::Encrypt(string fileName)
+{
+	this->key = "monkey";
+	this->fileName = fileName;
+	this->bufferFileName = "tmpFile.tmp";
+}
+
+
+string Encrypt::encrypt()
+{
+	 string msg;
+     ifstream inf;
+	 ofstream outf;
+    
+	inf.open ( this->fileName );
+    
+	//------------------------- 
+    getline ( inf, msg, '\0' );
+	  // Make sure the key is at least as long as the message
+	inf.close();
+	string key = this->key;
+	string tmp (key);
+    while (key.size() < msg.size())
+        key += tmp;
+    
+    // And now for the encryption part
+    for (string::size_type i = 0; i < msg.size(); ++i)
+        msg[i] ^= key[i];
+	
+	fstream clear_file(this->fileName, ios::out);
+	clear_file.close();
+
+	outf.open (this->fileName);
+    outf << msg;
+	outf.close();
+	
+    return msg;
+}
+	
+string Encrypt::decrypt()
+{
+	return encrypt();
+}
