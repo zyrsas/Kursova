@@ -15,7 +15,6 @@ public:
 	void setPassword(string password) {this->password = password;};
 	string getPassword() {return this->password;};
 	string getFileName() {return this->fileName;};
-
 	void saveInFile();
 	void setInFile();
 	bool CheckLogin(string login, string password);

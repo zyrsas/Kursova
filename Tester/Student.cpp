@@ -51,6 +51,7 @@ int Student::getRezult()
 void Student::saveRezult()
 {
 	Encrypt crypt(this->rezultFileName);
+	//decrypt 
 	crypt.decrypt();
 
 	ofstream fileRezult;
@@ -58,16 +59,17 @@ void Student::saveRezult()
 	
 	if (!fileRezult)
 	{
+		//create file
 		fstream clear_file(this->rezultFileName, ios::out);
 		clear_file.close();
 	}
-	
+	//write informations of students
 	fileRezult << this->name << endl;
 	fileRezult << this->group << endl;
 	fileRezult << this->nameTest << endl;
 	fileRezult << this->rezult << endl;
 	fileRezult.close();
-
+	//encrypt
 	crypt.encrypt();
 }
 
@@ -83,6 +85,7 @@ int Student::setStudentRezult(Student* student)
 		return 0;
 
 	int i = 0;
+	//read students
 	while(!fileRezult.eof())
 	{
 		getline(fileRezult, student[i].name);
@@ -96,9 +99,10 @@ int Student::setStudentRezult(Student* student)
 	fileRezult.close();
 	
 	crypt.encrypt();
+	//return count students
 	return i - 1;
 }
-
+//clear teble rezult
 bool Student::clearRezult()
 {
 	ofstream fileRezult;
@@ -108,7 +112,7 @@ bool Student::clearRezult()
 		return false;
 	return true;
 }
-
+//right answer
 void Student::rightAnswer(int ball)
 {
 	this->rezult += ball;

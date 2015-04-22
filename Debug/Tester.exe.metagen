@@ -4,6 +4,7 @@
   Tester.MainForm.resources - Embedded, ContainedInManifestFile, 
   Tester.PasswordForm.resources - Embedded, ContainedInManifestFile, 
   Tester.RezultViewForm.resources - Embedded, ContainedInManifestFile, 
+  Tester.TestCompleteForm.resources - Embedded, ContainedInManifestFile, 
   Tester.TestUserForm.resources - Embedded, ContainedInManifestFile, 
   Tester.WelcomeUserForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -56,6 +57,9 @@ Class Tester.WelcomeUserForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
     System.Windows.Forms.TextBox nameStudentText : Public
     Boolean cancel : Public
     System.Windows.Forms.TextBox groupText : Public
+Class Tester.TestCompleteForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tester.TestUserForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

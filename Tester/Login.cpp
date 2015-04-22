@@ -7,16 +7,10 @@ using namespace std;
 
 Login::Login(void)
 {
+	//default value
 	this->login = "Test";
 	this->password = "Test";
 	this->fileName = "login.pass";
-}
-
-
-System::String^ stringToString(string str)
-{
-	System::String^ str2 = gcnew System::String(str.c_str());
-	return str2;
 }
 
 void Login::setInFile()
@@ -24,6 +18,7 @@ void Login::setInFile()
 	ifstream ifs (this->fileName);
 	if (!ifs.is_open()) 
 	{
+		//file not open
 		ofstream fout;
 		fout.open(this->fileName);
 		fout << "Test\n";
@@ -34,13 +29,15 @@ void Login::setInFile()
 	}
 	else
     {
+		//file open
 		Encrypt encrypt(this->fileName);
+		//decrypt
 		encrypt.decrypt();
+		//get login and password
 		getline(ifs, this->login);
-		 
 		getline(ifs, this->password);
-		ifs.close(); // закрываем файл
-
+		ifs.close(); 
+		//encrypt
 		encrypt.encrypt();
 	}
 }
@@ -51,15 +48,19 @@ void Login::saveInFile()
 	clear_file.close();
 	ofstream fout;
 	fout.open(this->fileName);
+	//write login in file
 	fout << this->login << "\n";
+	//write password
 	fout << this->password;
 	fout.close();
 	Encrypt encrypt(this->fileName);
+	//encrypt login and password
 	encrypt.encrypt();
 }
 
 bool Login::CheckLogin(string login, string password)
 {
+	//checking 
 	if ( (!this->login.compare(login)) && (!this->password.compare(password)))
 		return true;
 	return false;

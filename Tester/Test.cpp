@@ -7,6 +7,7 @@ using namespace std;
 
 Test::Test(void)
 {
+	//default value
 	this->nameTest = "Тест";
 	this->time = 900;
 	this->ball = 5;
@@ -17,7 +18,7 @@ Test::Test(void)
 //write Question in file
 void Test::writeInFile(Question quest[], int count)
 {
-	Encrypt crypt(this->fileName);
+	//Encrypt crypt(this->fileName);
 
 	ofstream myfile;
 	myfile.open (this->fileName);
@@ -33,20 +34,20 @@ void Test::writeInFile(Question quest[], int count)
 	myfile << this->ball << "\n";
 	myfile << this->author << "\n";
 	myfile.close();
-	crypt.encrypt();
+	//crypt.encrypt();
 }
 
 //set settings with file
 void Test::setWithFile(string fileName)
 {
-	Encrypt crypt(fileName);
-	crypt.decrypt();
+	//Encrypt crypt(fileName);
+	//crypt.decrypt();
 
 	ifstream in (fileName);
 	if (!in)
-	{
+		//file not fount
 		return ;
-	}
+
 	string myString;
 	getline(in, myString);
 	int count = atoi(myString.c_str());
@@ -86,5 +87,5 @@ void Test::setWithFile(string fileName)
 	getline(in, this->author);
 	in.close();
 
-	crypt.encrypt();
+	//crypt.encrypt();
 }

@@ -25,13 +25,15 @@ string Question::toString()
 {
 	string countAns;
 	string rightAns;
-	
-	ostringstream convert;   // stream used for the conversion
-	convert << this->count_answer;      // insert the textual representation of 'Number' in the characters in the stream
+	// stream used for the conversion
+	ostringstream convert;   
+	// insert the textual representation of 'Number' in the characters in the stream
+	convert << this->count_answer;      
 	countAns = convert.str();
 	
 	ostringstream convert2;
-	convert2 << this->right_answer;      // insert the textual representation of 'Number' in the characters in the stream
+	// insert the textual representation of 'Number' in the characters in the stream
+	convert2 << this->right_answer;     
 	rightAns = convert2.str();
 
 	//Qestion to string for write in file
@@ -47,47 +49,38 @@ string Question::toString()
 
 int Question::setWithFile(Question* quest, string fileName)
 {
-	Encrypt crypt(fileName);
-	crypt.decrypt();
-
+	//Encrypt crypt(fileName);
+	//decrypt file
+	//crypt.decrypt();
 	ifstream in (fileName);
 	if (!in)
-	{
 		return 0;
-	}
-	string myString, tmpStr;
+	string myString;
 	getline(in, myString);
 	int count = atoi(myString.c_str());
-	string buf;
 	int i = 0;
-	int j;
 	int value;
-
+	//read question
 	while (i < count)
 	{
 		getline(in, quest[i].question);
 		getline(in, myString);
 		value = atoi(myString.c_str());
 		quest[i].count_answer = value;
+		
 		for(int j = 0; j < value; j++)
-		{
 			getline(in, quest[i].options[j]);
-		}
+		
 		getline(in, myString);
 		value = atoi(myString.c_str());
 		quest[i].right_answer = value;
 		i++;
 	}
 	in.close();
-
-	crypt.encrypt();
+	//encrypt
+	//crypt.encrypt();
+	//return count questions
 	return count;
 }
 
-
-bool Question::checkAnswer(int index)
-{
-///
-	return true;
-}
 

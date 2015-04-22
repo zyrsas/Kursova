@@ -21,7 +21,6 @@ public:
 	void setAuthor(string author) {this->author = author;};
 	void setFileName(string fileName) {this->fileName = fileName;};
 	void writeInFile(Question quest[], int count);
-	
 	void setWithFile(string fileName);
 	string getNameTest(){return this->nameTest;};
 	int getCountQuestion() {return this->countQuestion;};

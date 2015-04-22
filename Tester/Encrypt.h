@@ -5,26 +5,14 @@ using namespace std;
 class Encrypt
 {
 private:
-	 string fileName;
-	 string bufferFileName;
-	 string key;
+	string fileName;
 public:
 	Encrypt(void);
 	Encrypt(string fileName);
-
-	void setBufferFileName(string fileName) {this->bufferFileName = fileName;};
-	string getBufferFileName() {return this->bufferFileName;};
-	
 	void setFileName(string fileName) {this->fileName = fileName;};
-	
 	string getGileName() {return this->fileName;};
-	void setKey(string key) {this->key = key;};
-	string getKey() {return this->key;};
 
 	string encrypt();
 	string decrypt();
-	
-	void swapFile();
-
 };
 
